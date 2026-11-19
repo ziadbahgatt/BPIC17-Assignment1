@@ -1,0 +1,297 @@
+### A_Incomplete | A_Validating | O_Returned | W_Assess potential fraud | 
+|--- n_events <= 10.50
+|   |--- n_events <= 9.50
+|   |   |--- days_elapsed <= 3.27
+|   |   |   |--- class: O_Returned
+|   |   |--- days_elapsed >  3.27
+|   |   |   |--- class: O_Returned
+|   |--- n_events >  9.50
+|   |   |--- RequestedAmount <= 3300.00
+|   |   |   |--- class: W_Validate application
+|   |   |--- RequestedAmount >  3300.00
+|   |   |   |--- class: W_Validate application
+|--- n_events >  10.50
+|   |--- CreditScore <= 709.50
+|   |   |--- ApplicationType_New credit <= 0.50
+|   |   |   |--- class: A_Validating
+|   |   |--- ApplicationType_New credit >  0.50
+|   |   |   |--- class: W_Assess potential fraud
+|   |--- CreditScore >  709.50
+|   |   |--- n_offers <= 1.50
+|   |   |   |--- class: W_Call incomplete files
+|   |   |--- n_offers >  1.50
+|   |   |   |--- class: W_Call incomplete files
+
+
+### tau:skip_11 | tau:skip_12
+|--- n_validations <= 1.50
+|   |--- CreditScore <= 594.50
+|   |   |--- n_events <= 10.50
+|   |   |   |--- class: tau:skip_12
+|   |   |--- n_events >  10.50
+|   |   |   |--- class: tau:skip_11
+|   |--- CreditScore >  594.50
+|   |   |--- n_events <= 11.50
+|   |   |   |--- class: tau:skip_11
+|   |   |--- n_events >  11.50
+|   |   |   |--- class: tau:skip_11
+|--- n_validations >  1.50
+|   |--- LoanGoal_Remaining debt home <= 0.50
+|   |   |--- n_events <= 13.50
+|   |   |   |--- class: tau:skip_12
+|   |   |--- n_events >  13.50
+|   |   |   |--- class: tau:skip_12
+|   |--- LoanGoal_Remaining debt home >  0.50
+|   |   |--- n_validations <= 2.50
+|   |   |   |--- class: tau:skip_11
+|   |   |--- n_validations >  2.50
+|   |   |   |--- class: tau:skip_12
+
+
+### O_Cancelled | tau:skip_26
+|--- n_sent <= 1.50
+|   |--- n_events <= 10.50
+|   |   |--- n_events <= 9.50
+|   |   |   |--- class: O_Cancelled
+|   |   |--- n_events >  9.50
+|   |   |   |--- class: O_Cancelled
+|   |--- n_events >  10.50
+|   |   |--- CreditScore <= 297.00
+|   |   |   |--- class: tau:skip_26
+|   |   |--- CreditScore >  297.00
+|   |   |   |--- class: tau:skip_26
+|--- n_sent >  1.50
+|   |--- n_events <= 13.50
+|   |   |--- n_events <= 12.50
+|   |   |   |--- class: O_Cancelled
+|   |   |--- n_events >  12.50
+|   |   |   |--- class: O_Cancelled
+|   |--- n_events >  13.50
+|   |   |--- n_offers <= 2.50
+|   |   |   |--- class: O_Cancelled
+|   |   |--- n_offers >  2.50
+|   |   |   |--- class: O_Cancelled
+
+
+### W_Complete application | tau:skip_6
+|--- a_complete_done <= 0.50
+|   |--- n_sent <= 0.50
+|   |   |--- n_events <= 6.50
+|   |   |   |--- class: tau:skip_6
+|   |   |--- n_events >  6.50
+|   |   |   |--- class: tau:skip_6
+|   |--- n_sent >  0.50
+|   |   |--- days_elapsed <= 0.02
+|   |   |   |--- class: W_Complete application
+|   |   |--- days_elapsed >  0.02
+|   |   |   |--- class: W_Complete application
+|--- a_complete_done >  0.50
+|   |--- class: tau:skip_6
+
+
+### A_Complete | tau:skip_8
+|--- a_complete_done <= 0.50
+|   |--- n_sent <= 0.50
+|   |   |--- class: tau:skip_8
+|   |--- n_sent >  0.50
+|   |   |--- class: A_Complete
+|--- a_complete_done >  0.50
+|   |--- OfferedAmount <= 49900.00
+|   |   |--- FirstWithdrawalAmount <= 24850.00
+|   |   |   |--- class: tau:skip_8
+|   |   |--- FirstWithdrawalAmount >  24850.00
+|   |   |   |--- class: tau:skip_8
+|   |--- OfferedAmount >  49900.00
+|   |   |--- class: tau:skip_8
+
+
+### A_Validating | tau:skip_19
+|--- CreditScore <= 566.50
+|   |--- ApplicationType_New credit <= 0.50
+|   |   |--- FirstWithdrawalAmount <= 1.00
+|   |   |   |--- class: A_Validating
+|   |   |--- FirstWithdrawalAmount >  1.00
+|   |   |   |--- class: A_Validating
+|   |--- ApplicationType_New credit >  0.50
+|   |   |--- FirstWithdrawalAmount <= 153.46
+|   |   |   |--- class: tau:skip_19
+|   |   |--- FirstWithdrawalAmount >  153.46
+|   |   |   |--- class: tau:skip_19
+|--- CreditScore >  566.50
+|   |--- ApplicationType_Limit raise <= 0.50
+|   |   |--- LoanGoal_Remaining debt home <= 0.50
+|   |   |   |--- class: A_Validating
+|   |   |--- LoanGoal_Remaining debt home >  0.50
+|   |   |   |--- class: A_Validating
+|   |--- ApplicationType_Limit raise >  0.50
+|   |   |--- class: A_Validating
+
+
+### tau:skip_20 | tau:skip_21
+|--- CreditScore <= 566.50
+|   |--- ApplicationType_Limit raise <= 0.50
+|   |   |--- OfferedAmount <= 8725.00
+|   |   |   |--- class: tau:skip_20
+|   |   |--- OfferedAmount >  8725.00
+|   |   |   |--- class: tau:skip_20
+|   |--- ApplicationType_Limit raise >  0.50
+|   |   |--- FirstWithdrawalAmount <= 212.50
+|   |   |   |--- class: tau:skip_21
+|   |   |--- FirstWithdrawalAmount >  212.50
+|   |   |   |--- class: tau:skip_21
+|--- CreditScore >  566.50
+|   |--- ApplicationType_Limit raise <= 0.50
+|   |   |--- LoanGoal_Remaining debt home <= 0.50
+|   |   |   |--- class: tau:skip_21
+|   |   |--- LoanGoal_Remaining debt home >  0.50
+|   |   |   |--- class: tau:skip_21
+|   |--- ApplicationType_Limit raise >  0.50
+|   |   |--- class: tau:skip_21
+
+
+### A_Submitted | tau:skip_3
+|--- ApplicationType_New credit <= 0.50
+|   |--- class: tau:skip_3
+|--- ApplicationType_New credit >  0.50
+|   |--- RequestedAmount <= 4500.00
+|   |   |--- LoanGoal_Unknown <= 0.50
+|   |   |   |--- class: tau:skip_3
+|   |   |--- LoanGoal_Unknown >  0.50
+|   |   |   |--- class: tau:skip_3
+|   |--- RequestedAmount >  4500.00
+|   |   |--- RequestedAmount <= 16075.00
+|   |   |   |--- class: A_Submitted
+|   |   |--- RequestedAmount >  16075.00
+|   |   |   |--- class: A_Submitted
+
+
+### A_Cancelled | tau:skip_22
+|--- CreditScore <= 296.00
+|   |--- ApplicationType_Limit raise <= 0.50
+|   |   |--- FirstWithdrawalAmount <= 103.50
+|   |   |   |--- class: A_Cancelled
+|   |   |--- FirstWithdrawalAmount >  103.50
+|   |   |   |--- class: A_Cancelled
+|   |--- ApplicationType_Limit raise >  0.50
+|   |   |--- FirstWithdrawalAmount <= 375.00
+|   |   |   |--- class: tau:skip_22
+|   |   |--- FirstWithdrawalAmount >  375.00
+|   |   |   |--- class: tau:skip_22
+|--- CreditScore >  296.00
+|   |--- class: tau:skip_22
+
+
+### W_Call after offers | tau:skip_7
+|--- LoanGoal_Unknown <= 0.50
+|   |--- RequestedAmount <= 300.00
+|   |   |--- MonthlyCost <= 200.93
+|   |   |   |--- class: W_Call after offers
+|   |   |--- MonthlyCost >  200.93
+|   |   |   |--- class: tau:skip_7
+|   |--- RequestedAmount >  300.00
+|   |   |--- LoanGoal_Not speficied <= 0.50
+|   |   |   |--- class: tau:skip_7
+|   |   |--- LoanGoal_Not speficied >  0.50
+|   |   |   |--- class: W_Call after offers
+|--- LoanGoal_Unknown >  0.50
+|   |--- CreditScore <= 751.50
+|   |   |--- ApplicationType_New credit <= 0.50
+|   |   |   |--- class: W_Call after offers
+|   |   |--- ApplicationType_New credit >  0.50
+|   |   |   |--- class: W_Call after offers
+|   |--- CreditScore >  751.50
+|   |   |--- FirstWithdrawalAmount <= 4961.94
+|   |   |   |--- class: W_Call after offers
+|   |   |--- FirstWithdrawalAmount >  4961.94
+|   |   |   |--- class: W_Call after offers
+
+
+### A_Denied | O_Accepted | tau:skip_17
+|--- CreditScore <= 296.00
+|   |--- ApplicationType_New credit <= 0.50
+|   |   |--- OfferedAmount <= 38250.00
+|   |   |   |--- class: O_Accepted
+|   |   |--- OfferedAmount >  38250.00
+|   |   |   |--- class: tau:skip_17
+|   |--- ApplicationType_New credit >  0.50
+|   |   |--- OfferedAmount <= 13450.00
+|   |   |   |--- class: A_Denied
+|   |   |--- OfferedAmount >  13450.00
+|   |   |   |--- class: tau:skip_17
+|--- CreditScore >  296.00
+|   |--- CreditScore <= 956.50
+|   |   |--- LoanGoal_Remaining debt home <= 0.50
+|   |   |   |--- class: O_Accepted
+|   |   |--- LoanGoal_Remaining debt home >  0.50
+|   |   |   |--- class: O_Accepted
+|   |--- CreditScore >  956.50
+|   |   |--- FirstWithdrawalAmount <= 40.00
+|   |   |   |--- class: O_Accepted
+|   |   |--- FirstWithdrawalAmount >  40.00
+|   |   |   |--- class: O_Accepted
+
+
+### W_Validate application | tau:skip_18
+|--- CreditScore <= 834.50
+|   |--- FirstWithdrawalAmount <= 9543.00
+|   |   |--- days_elapsed <= 32.41
+|   |   |   |--- class: W_Validate application
+|   |   |--- days_elapsed >  32.41
+|   |   |   |--- class: tau:skip_18
+|   |--- FirstWithdrawalAmount >  9543.00
+|   |   |--- days_elapsed <= 6.94
+|   |   |   |--- class: tau:skip_18
+|   |   |--- days_elapsed >  6.94
+|   |   |   |--- class: W_Validate application
+|--- CreditScore >  834.50
+|   |--- OfferedAmount <= 25950.00
+|   |   |--- n_validations <= 1.50
+|   |   |   |--- class: tau:skip_18
+|   |   |--- n_validations >  1.50
+|   |   |   |--- class: tau:skip_18
+|   |--- OfferedAmount >  25950.00
+|   |   |--- NumberOfTerms <= 120.50
+|   |   |   |--- class: W_Validate application
+|   |   |--- NumberOfTerms >  120.50
+|   |   |   |--- class: W_Validate application
+
+
+### W_Handle leads | tau:skip_2
+|--- LoanGoal_Existing loan takeover <= 0.50
+|   |--- RequestedAmount <= 9550.00
+|   |   |--- LoanGoal_Home improvement <= 0.50
+|   |   |   |--- class: W_Handle leads
+|   |   |--- LoanGoal_Home improvement >  0.50
+|   |   |   |--- class: tau:skip_2
+|   |--- RequestedAmount >  9550.00
+|   |   |--- LoanGoal_Not speficied <= 0.50
+|   |   |   |--- class: tau:skip_2
+|   |   |--- LoanGoal_Not speficied >  0.50
+|   |   |   |--- class: W_Handle leads
+|--- LoanGoal_Existing loan takeover >  0.50
+|   |--- RequestedAmount <= 27450.00
+|   |   |--- RequestedAmount <= 9900.00
+|   |   |   |--- class: W_Handle leads
+|   |   |--- RequestedAmount >  9900.00
+|   |   |   |--- class: W_Handle leads
+|   |--- RequestedAmount >  27450.00
+|   |   |--- RequestedAmount <= 31727.00
+|   |   |   |--- class: W_Handle leads
+|   |   |--- RequestedAmount >  31727.00
+|   |   |   |--- class: W_Handle leads
+
+
+### tau:skip_15 | tau:skip_16
+|--- n_offers <= 1.50
+|   |--- class: tau:skip_16
+|--- n_offers >  1.50
+|   |--- n_events <= 15.50
+|   |   |--- days_elapsed <= 8.23
+|   |   |   |--- class: tau:skip_15
+|   |   |--- days_elapsed >  8.23
+|   |   |   |--- class: tau:skip_15
+|   |--- n_events >  15.50
+|   |   |--- n_offers <= 2.50
+|   |   |   |--- class: tau:skip_15
+|   |   |--- n_offers >  2.50
+|   |   |   |--- class: tau:skip_15

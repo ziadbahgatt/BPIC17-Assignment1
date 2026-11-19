@@ -1,0 +1,17 @@
+,Full log,Completed cases,Modeling log (complete events)
+Number of cases,31509.0,31411.0,31411.0
+Number of events,1202267.0,1198319.0,473963.0
+Number of distinct activities,26.0,26.0,24.0
+Number of variants (activity sequence),15930.0,15844.0,5562.0
+Number of resources,149.0,148.0,144.0
+Number of distinct case attribute labels,4.0,4.0,4.0
+Number of distinct event attribute labels,15.0,15.0,15.0
+Number of categorical event attributes,9.0,9.0,9.0
+Case length mean (events),38.15630454790695,38.14966094680207,15.089077074910064
+Case length std (events),16.71530805656438,16.70067346647951,4.59155254121723
+Case duration mean (days),21.899605591087365,21.878424212598176,21.847985913422935
+Case duration std (days),13.1692325332843,13.132550869540042,12.923936704519669
+Case duration mean (minutes),31535.432051165804,31504.930866141374,31461.099715329026
+Case duration std (minutes),18963.694847929393,18910.873252137662,18610.468854508323
+Case duration mean (seconds),1892125.9230699483,1890295.8519684824,1887665.9829197417
+Case duration std (seconds),1137821.6908757635,1134652.3951282597,1116628.1312704994

@@ -1,0 +1,14 @@
+name: bpic17
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyter
+  - pm4py
+  - pandas
+  - numpy
+  - scikit-learn
+  - matplotlib
+  - pyarrow
+  - graphviz
+  - python-graphviz

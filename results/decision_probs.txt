@@ -1,0 +1,28 @@
+A_Incomplete | A_Validating | O_Returned | W_Assess potential fraud | 
+  {'O_Returned': 0.308, 'A_Incomplete': 0.307, 'A_Validating': 0.209, 'W_Validate application': 0.146, 'W_Call incomplete files': 0.028, 'W_Assess potential fraud': 0.002}
+tau:skip_11 | tau:skip_12
+  {'tau:skip_11': 0.685, 'tau:skip_12': 0.315}
+O_Cancelled | tau:skip_26
+  {'tau:skip_26': 0.624, 'O_Cancelled': 0.376}
+W_Complete application | tau:skip_6
+  {'tau:skip_6': 0.556, 'W_Complete application': 0.444}
+A_Complete | tau:skip_8
+  {'A_Complete': 0.73, 'tau:skip_8': 0.27}
+A_Validating | tau:skip_19
+  {'A_Validating': 0.551, 'tau:skip_19': 0.449}
+tau:skip_20 | tau:skip_21
+  {'tau:skip_21': 0.734, 'tau:skip_20': 0.266}
+A_Submitted | tau:skip_3
+  {'A_Submitted': 0.648, 'tau:skip_3': 0.352}
+A_Cancelled | tau:skip_22
+  {'tau:skip_22': 0.67, 'A_Cancelled': 0.33}
+W_Call after offers | tau:skip_7
+  {'tau:skip_7': 0.992, 'W_Call after offers': 0.008}
+A_Denied | O_Accepted | tau:skip_17
+  {'O_Accepted': 0.731, 'A_Denied': 0.153, 'tau:skip_17': 0.117}
+W_Validate application | tau:skip_18
+  {'tau:skip_18': 0.792, 'W_Validate application': 0.208}
+W_Handle leads | tau:skip_2
+  {'tau:skip_2': 0.829, 'W_Handle leads': 0.171}
+tau:skip_15 | tau:skip_16
+  {'tau:skip_16': 0.787, 'tau:skip_15': 0.213}

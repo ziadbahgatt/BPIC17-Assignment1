@@ -1,0 +1,15 @@
+decision_point,support,branches,chance,DATA,DATA+STATE,gap,verdict,majority
+A_Incomplete | A_Validating | O_Returned | W_Assess potential fraud | ,74846,6,0.167,0.245,0.34,0.095,fixed probability,0.308
+tau:skip_11 | tau:skip_12,74846,2,0.5,0.541,0.611,0.07,fixed probability,0.685
+O_Cancelled | tau:skip_26,50364,2,0.5,0.638,0.771,0.133,structural,0.624
+W_Complete application | tau:skip_6,42804,2,0.5,0.548,0.741,0.193,structural,0.556
+A_Complete | tau:skip_8,42804,2,0.5,0.566,1.0,0.434,structural,0.73
+A_Validating | tau:skip_19,42804,2,0.5,0.808,0.815,0.007,data-driven,0.551
+tau:skip_20 | tau:skip_21,42804,2,0.5,0.701,0.758,0.057,data-driven,0.734
+A_Submitted | tau:skip_3,31411,2,0.5,0.758,0.758,0.0,data-driven,0.648
+A_Cancelled | tau:skip_22,31411,2,0.5,0.855,0.947,0.092,data-driven,0.67
+W_Call after offers | tau:skip_7,31266,2,0.5,0.82,0.865,0.046,data-driven,0.992
+A_Denied | O_Accepted | tau:skip_17,23567,3,0.333,0.663,0.696,0.033,data-driven,0.731
+W_Validate application | tau:skip_18,23567,2,0.5,0.579,0.58,0.001,fixed probability,0.792
+W_Handle leads | tau:skip_2,20339,2,0.5,0.61,0.61,0.0,fixed probability,0.829
+tau:skip_15 | tau:skip_16,4571,2,0.5,0.572,0.877,0.305,structural,0.787

@@ -1,0 +1,13 @@
+,Statistic,Full log,Completed cases,Modeling log (complete events)
+Log size,Cases,"31,509","31,411","31,411"
+Log size,Events,"1,202,267","1,198,319","473,963"
+Log size,Distinct activities,26,26,24
+Log size,Resources,149,148,144
+Variants,Activity sequence,"15,930","15,844","5,562"
+Attributes,Case attribute labels,4,4,4
+Attributes,Event attribute labels,15,15,15
+Attributes,Categorical event attributes,9,9,9
+Case length,Events per case (mean ± std),38.16 ± 16.72,38.15 ± 16.70,15.09 ± 4.59
+Case duration,Days (mean ± std),21.90 ± 13.17,21.88 ± 13.13,21.85 ± 12.92
+Case duration,Minutes (mean ± std),"31,535 ± 18,964","31,505 ± 18,911","31,461 ± 18,610"
+Case duration,Seconds (mean ± std),"1,892,126 ± 1,137,822","1,890,296 ± 1,134,652","1,887,666 ± 1,116,628"

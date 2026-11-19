@@ -1,0 +1,6 @@
+*.xes
+*.xes.gz
+*.parquet
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
